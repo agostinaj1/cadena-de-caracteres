@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char original[100];
+    char copia[100];
+
+    printf("Ingrese una palabra o frase: ");
+    fgets(original, sizeof(original), stdin);
+
+    // Eliminar el salto de línea '\n' si está presente
+    size_t len = strlen(original);
+    if (original[len - 1] == '\n') {
+        original[len - 1] = '\0';
+    }
+
+    // Copiar la cadena original en otra variable
+    strcpy(copia, original);
+
+    // Mostrar ambas
+    printf("Cadena original: %s\n", original);
+    printf("Copia de la cadena: %s\n", copia);
+
+    return 0;
+}
