@@ -1,0 +1,44 @@
+Los punteros tienen la capacidad de trabajar directamente en la memoria como veremos a continuación. 
+Ventajas del uso de punteros
+
+- En el caso de paso de variables a una función por dirección o referencia, es necesario emplear parámetros formales como punteros
+- Permiten realizar operaciones de asignación dinámica de memoria
+- Permiten efectuar operaciones con estructuras de datos dinámicas
+Todo lo mencionado anteriormente lo iremos viendo a medida que vamos avanzando.
+
+Una primera aproximación
+
+Hasta ahora sabemos que las variables contienen algún valor en específico, por ejemplo la siguiente variable llamada num1 contiene el valor de 7:
+
+int num1 = 7;
+
+Hasta aquí, todo bien. En cambio, un puntero lo que contiene es la dirección de memoria de alguna variable.
+Entonces, podemos decir que un puntero es una variable que en vez de contener un valor, contiene una dirección de memoria. En este sentido, se entiende que una variable se refiere directamente a un valor y un apuntador se refiere indirectamente a un valor
+Entonces, ¿si un puntero es una variable, como se declara?. Esto lo veremos a continuación.
+
+¿Cómo se declara un puntero?
+
+Para que el compilador entienda que lo que queremos declarar es un puntero y no una variable, hay que agregar el signo * antes del nombre que escogeremos para nuestro puntero. El signo * se conoce como operador de indirección.
+
+Por ejemplo:
+
+int *ptrNum1;
+
+Por cierto, leí que los apuntadores deben ser inicializados cuando son declarados, para evitar algún resultado inesperado. Un apuntador se puede inicializar con valor 0, NULL o una dirección.
+Estas inicializaciones quedarían de la siguiente manera:
+
+int *prtNum1 =  0;
+int *prtNum1 =  NULL;
+int *prtNum1 =  &variable;
+El siguiente código muestra cómo asignar a un puntero la dirección de memoria de otra variable.
+
+#include<stdio.h>
+
+int main(void){
+  int num1 = 7;
+  int *ptrNum1 = &num1;
+  printf("Valor de num1: %d\n", num1);
+  printf("Valor del puntero prtNum1: %p\n", ptrNum1);
+return 0;
+
+}
