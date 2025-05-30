@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char texto[100];
+
+    printf("Ingrese una palabra o frase: ");
+    fgets(texto, sizeof(texto), stdin);
+
+    // Eliminar el salto de línea '\n' si está presente
+    size_t longitud = strlen(texto);
+    if (texto[longitud - 1] == '\n') {
+        texto[longitud - 1] = '\0';
+        longitud--; // No contar el '\n'
+    }
+
+    printf("La frase tiene %zu caracteres.\n", longitud);
+
+    return 0;
+}
